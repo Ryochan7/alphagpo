@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 from mygpo.core.models import UpdateInfoModel
 from mygpo.podcasts.models import Podcast
@@ -8,6 +9,8 @@ class Category(UpdateInfoModel):
     """A category of podcasts"""
 
     title = models.CharField(max_length=1000, null=False, blank=False, unique=True)
+    # Need clean title for directory listing
+    title_slug = models.SlugField(max_length=1000, editable=False, blank=False, unique=True)
 
     num_entries = models.IntegerField()
 
@@ -19,6 +22,9 @@ class Category(UpdateInfoModel):
 
     def save(self, *args, **kwargs):
         self.num_entries = self.entries.count()
+        if not self.pk:
+            self.title_slug = slugify(title)
+
         super(Category, self).save(*args, **kwargs)
 
     @property

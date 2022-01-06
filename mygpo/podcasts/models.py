@@ -583,6 +583,9 @@ class Podcast(
 
     # search vector for full-text search
     search_vector = SearchVectorField(null=True)
+    
+    # Raw languague code with no territory
+    base_language = models.CharField(max_length=10, null=True, blank=True, db_index=True)
 
     objects = PodcastManager()
 
