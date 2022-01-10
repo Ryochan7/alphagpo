@@ -1,8 +1,14 @@
+import random
+import string
+
 from django.db import models
 from django.utils.text import slugify
 
 from mygpo.core.models import UpdateInfoModel
 from mygpo.podcasts.models import Podcast
+
+def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
 
 
 class Category(UpdateInfoModel):
@@ -22,8 +28,8 @@ class Category(UpdateInfoModel):
 
     def save(self, *args, **kwargs):
         self.num_entries = self.entries.count()
-        if not self.pk:
-            self.title_slug = slugify(title)
+        if not self.pk or not self.title_slug:
+            self.title_slug = _generate_unique_title_slug(self.title)
 
         super(Category, self).save(*args, **kwargs)
 
@@ -38,6 +44,26 @@ class Category(UpdateInfoModel):
     @property
     def tag(self):
         return self.tags.first().tag
+
+    def _generate_unique_title_slug(self, text):
+        new_slug = slugify(text)
+        unique_slug = new_slug
+
+        def _generate_queryset():
+            test_query = Category.objects.filter(title_slug=unique_slug)
+            if self.pk:
+                test_query = test_query.exclude(id=self.pk)
+
+            return test_query
+
+        test_query = _generate_queryset()
+        slug_exists = test_query.exists()
+        while slug_exists:
+            unique_slug = "{}-{}".format(unique_slug, random_string_generator(size=4))
+            test_query = _generate_queryset()
+            slug_exists = test_query.exists()
+
+        return unique_slug
 
 
 class CategoryEntry(UpdateInfoModel):
