@@ -360,7 +360,7 @@ GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "")
 SUPPORT_URL = os.getenv("SUPPORT_URL", "")
 
 
-FEEDSERVICE_URL = os.getenv("FEEDSERVICE_URL", "http://feeds.gpodder.net/")
+FEEDSERVICE_URL = os.getenv("FEEDSERVICE_URL", "http://feedparser.ryochan7.org/")
 
 
 # time for how long an activation is valid; after that, an unactivated user
