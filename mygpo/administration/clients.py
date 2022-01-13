@@ -1,7 +1,9 @@
 import re
 from collections import namedtuple, Counter
 
-from mygpo.users.models import Client
+from django.db.models import Count
+
+from mygpo.users.models import Client as ClientModel
 
 
 Client = namedtuple("Client", "client client_version lib lib_version os os_version")
@@ -15,7 +17,7 @@ class UserAgentStats(object):
 
     def get_entries(self):
         if self._useragents is None:
-            result = Client.objects.values("user_agent").annotate(Count("user_agent"))
+            result = ClientModel.objects.values("user_agent").annotate(Count("user_agent"))
             result = {x["user_agent"]: x["user_agent__count"] for x in result}
             self._useragents = Counter(result)
 
