@@ -4,7 +4,7 @@ from django.db import IntegrityError
 from django.utils.text import slugify
 
 from mygpo.decorators import query_if_required
-from mygpo.categories.models import Category, CategoryEntry
+from mygpo.categories.models import Category, CategoryEntry, CategoryTag
 
 
 class Topics(object):
@@ -57,7 +57,15 @@ def update_category(podcast):
 
     random_tag = choice(all_tags).strip()
 
-    try:
+    # Check that a relevant CategoryTag instance exists
+    cat_tag = CategoryTag.objects.filter(tag=random_tag).select_related("category").first()
+    if not cat_tag:
+        return;
+
+    # Grab Category instance
+    category = cat_tag.category
+
+    """try:
         category, created = Category.objects.get_or_create(
             tags__tag=slugify(random_tag), defaults={"title": random_tag}
         )
@@ -75,7 +83,7 @@ def update_category(podcast):
 
     if not created:
         # update modified timestamp
-        category.save()
+        category.save()"""
 
     # add podcast to the category as newest entry
     entry, created = CategoryEntry.objects.get_or_create(
