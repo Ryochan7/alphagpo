@@ -45,7 +45,7 @@
        {% if c.cls == "PodcastList" %}
         <a href="{% url "list-show" c.username c.slug %}">{% trans "more..." %}</a>
        {% else %}
-        <a href="{% url "directory" c.clean_title %}">{% trans "more..." %}</a>
+        <a href="{% url "directory" c.title_slug %}">{% trans "more..." %}</a>
        {% endif %}
       <td></td>
      </tr>

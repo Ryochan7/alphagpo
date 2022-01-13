@@ -159,7 +159,8 @@ class Directory(View):
 @vary_on_cookie
 def category(request, category, page_size=20):
     try:
-        category = Category.objects.get(tags__tag=category)
+        category = Category.objects.get(title_slug=category)
+        #category = Category.objects.get(tags__tag=category)
     except Category.DoesNotExist:
         return HttpResponseNotFound()
 
