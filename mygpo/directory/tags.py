@@ -56,9 +56,10 @@ def update_category(podcast):
         return
 
     random_tag = choice(all_tags).strip()
+    slug_random_tag = slugify(random_tag)
 
     # Check that a relevant CategoryTag instance exists
-    cat_tag = CategoryTag.objects.filter(tag=random_tag).select_related("category").first()
+    cat_tag = CategoryTag.objects.filter(tag=slug_random_tag).select_related("category").first()
     if not cat_tag:
         return;
 
