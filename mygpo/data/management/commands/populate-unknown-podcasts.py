@@ -1,8 +1,12 @@
+import logging
+
 from django.core.management.base import BaseCommand
 
 from mygpo.podcasts.models import Podcast
 from mygpo.data.models import PodcastUpdateResult
 from mygpo.data.feeddownloader import update_podcasts
+
+logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
@@ -17,4 +21,5 @@ class Command(BaseCommand):
         podcast_url_list = [url_group[0] for url_group in podcast_urls if url_group != None and len(url_group) > 0]
 
         # Grab info for each URL
-        update_podcasts(podcast_url_list)
+        for podcast in update_podcasts(podcast_url_list):
+            logger.info("Updated podcast %s", podcast)
