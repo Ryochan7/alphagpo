@@ -29,7 +29,7 @@ class Category(UpdateInfoModel):
     def save(self, *args, **kwargs):
         self.num_entries = self.entries.count()
         if not self.pk or not self.title_slug:
-            self.title_slug = _generate_unique_title_slug(self.title)
+            self.title_slug = self._generate_unique_title_slug(self.title)
 
         super(Category, self).save(*args, **kwargs)
 
