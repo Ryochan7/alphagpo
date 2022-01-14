@@ -10,6 +10,19 @@ dev-config:
 	echo secret > envs/dev/SECRET_KEY
 	echo postgres://mygpo:mygpo@localhost/mygpo > envs/dev/DATABASE_URL
 	echo True > envs/dev/DEBUG
+	echo "127.0.0.1" > envs/dev/INTERNAL_IPS
+
+prod-skel:
+	# Create empty skeleton for a production config. Need to fill in
+	# files with applicable values manually. Focusing on items not
+	# covered by settings module
+	mkdir -p envs/prod
+	echo "False" > envs/prod/DEBUG
+	touch envs/prod/ADMINS
+	touch envs/prod/DATABASE_URL
+	touch envs/prod/DEFAULT_FROM_EMAIL
+	touch envs/prod/SECRET_KEY
+	touch envs/prod/SERVER_EMAIL
 
 test: envs/dev/MEDIA_ROOT
 	# assume defined media root directory, empty before running tests
