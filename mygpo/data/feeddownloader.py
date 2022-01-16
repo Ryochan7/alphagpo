@@ -450,6 +450,9 @@ class MultiEpisodeUpdater(object):
 
     def assign_missing_episode_slugs(self):
         common_title = self.podcast.get_common_episode_title()
+        # If no common title found for Podcast episodes, skip
+        if not common_title:
+            return
 
         episodes = Episode.objects.filter(podcast=self.podcast, slugs__isnull=True)
 
