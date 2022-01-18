@@ -457,15 +457,16 @@ class MultiEpisodeUpdater(object):
         episodes = Episode.objects.filter(podcast=self.podcast, slugs__isnull=True)
 
         for episode in episodes:
+            # Skip if episode object already has a saved slug
+            if not episode.slug:
+                for slug in EpisodeSlugs(episode, common_title):
+                    try:
+                        with transaction.atomic():
+                            episode.set_slug(slug)
+                        break
 
-            for slug in EpisodeSlugs(episode, common_title):
-                try:
-                    with transaction.atomic():
-                        episode.set_slug(slug)
-                    break
-
-                except:
-                    continue
+                    except:
+                        continue
 
 
 class EpisodeUpdater(object):
