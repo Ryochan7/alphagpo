@@ -459,7 +459,12 @@ class MultiEpisodeUpdater(object):
         for episode in episodes:
             # Skip if episode object already has a saved slug
             if not episode.slug:
-                for slug in EpisodeSlugs(episode, common_title):
+                slug_generator = EpisodeSlugs(episode, common_title)
+                # If no base slug found, skip slug checks
+                if not slug_generator.base_slug:
+                    continue
+
+                for slug in slug_generator:
                     try:
                         with transaction.atomic():
                             episode.set_slug(slug)
