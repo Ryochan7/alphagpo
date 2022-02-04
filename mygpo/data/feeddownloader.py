@@ -291,7 +291,11 @@ class PodcastUpdater(object):
         if podcast.slug:
             return
 
-        for slug in PodcastSlugs(podcast):
+        slug_generator = PodcastSlugs(podcast)
+        if not slug_generator.base_slug:
+            return
+
+        for slug in slug_generator:
             try:
                 with transaction.atomic():
                     podcast.add_slug(slug)
