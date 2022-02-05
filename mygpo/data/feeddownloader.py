@@ -12,8 +12,9 @@ import requests
 
 from django.db import transaction
 from django.conf import settings
+from django.template.defaultfilters import slugify
 
-from mygpo.podcasts.models import Podcast, Episode
+from mygpo.podcasts.models import Podcast, Episode, Tag
 from mygpo.core.slugs import PodcastSlugs, EpisodeSlugs
 from mygpo.podcasts.models import (
     DEFAULT_UPDATE_INTERVAL,
@@ -204,6 +205,14 @@ class PodcastUpdater(object):
         )
 
         # podcast.tags['feed'] = parsed.tags or podcast.tags.get('feed', [])
+        # Grab current podcast instance tags and compare with tags
+        # available in the podcast feed. Update Podcast instance accordingly
+        podcast_tags = podcast.tags.all(source=Tag.FEED)
+        feed_tags = parsed.get("tags", [])
+        for tag in feed_tags:
+            tag_exists = any(slugify(tag) == pod_tag.tag for pod_tag in podcast_tags)
+            if not tag_exists:
+                podcast_tags.create(tag=slugify(tag), source=Tag.FEED)
 
         podcast.common_episode_title = to_maxlength(
             Podcast,

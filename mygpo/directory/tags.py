@@ -5,6 +5,7 @@ from django.utils.text import slugify
 
 from mygpo.decorators import query_if_required
 from mygpo.categories.models import Category, CategoryEntry, CategoryTag
+from mygpo.podcasts.models import Tag
 
 
 class Topics(object):
@@ -50,7 +51,7 @@ class Topics(object):
 
 
 def update_category(podcast):
-    all_tags = list(t.tag for t in podcast.tags.all())
+    all_tags = list(t.tag for t in podcast.tags.filter(source=Tag.FEED))
 
     if not all_tags:
         return
