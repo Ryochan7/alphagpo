@@ -61,7 +61,7 @@ def update_category(podcast):
     # Check that a relevant CategoryTag instance exists
     cat_tag = CategoryTag.objects.filter(tag=slug_random_tag).select_related("category").first()
     if not cat_tag:
-        return;
+        return
 
     # Grab Category instance
     category = cat_tag.category
