@@ -207,12 +207,12 @@ class PodcastUpdater(object):
         # podcast.tags['feed'] = parsed.tags or podcast.tags.get('feed', [])
         # Grab current podcast instance tags and compare with tags
         # available in the podcast feed. Update Podcast instance accordingly
-        podcast_tags = podcast.tags.filter(source=Tag.FEED)
+        """podcast_tags = podcast.tags.filter(source=Tag.FEED)
         feed_tags = parsed.get("tags", [])
         for tag in feed_tags:
             tag_exists = any(slugify(tag) == pod_tag.tag for pod_tag in podcast_tags)
             if not tag_exists:
-                podcast_tags.create(tag=slugify(tag), source=Tag.FEED)
+                podcast_tags.create(tag=slugify(tag), source=Tag.FEED)"""
 
         podcast.common_episode_title = to_maxlength(
             Podcast,
