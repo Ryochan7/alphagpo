@@ -129,6 +129,7 @@ class PodcastAdmin(admin.ModelAdmin):
                     "new_location",
                     "last_update",
                     "update_interval_factor",
+                    "next_podcast_update",
                     "search_index_uptodate",
                     "search_vector",
                 )
@@ -146,6 +147,7 @@ class PodcastAdmin(admin.ModelAdmin):
         "created",
         "last_update",
         "update_interval_factor",
+        "next_podcast_update",
         "search_index_uptodate",
         "search_vector",
     )
@@ -161,7 +163,7 @@ class PodcastAdmin(admin.ModelAdmin):
 
     @admin.display(description="Next scheduled update")
     def next_podcast_update(self, podcast):
-        return podcast.next_update()
+        return podcast.next_update
 
 
 @admin.register(Episode)
