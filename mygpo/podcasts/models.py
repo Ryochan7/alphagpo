@@ -11,6 +11,7 @@ from django.utils.translation import gettext as _
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKey
 from django.contrib.postgres.search import SearchVectorField
+from django.urls import reverse
 
 from mygpo import utils
 from mygpo.core.models import (
@@ -710,6 +711,21 @@ class Podcast(
 
         interval = timedelta(hours=self.update_interval) * self.update_interval_factor
         return self.last_update + interval
+
+    def get_absolute_url(self):
+        """Returns the link-target for a Podcast, preferring slugs over Ids"""
+
+        # we prefer slugs
+        if self.slug:
+            args = [self.slug]
+            view_name = "podcast-slug"
+
+        # as a fallback we use UUIDs
+        else:
+            args = [self.id]
+            view_name = "podcast-id"
+
+        return reverse(view_name, args=args)
 
 
 class EpisodeQuerySet(MergedUUIDQuerySet):
