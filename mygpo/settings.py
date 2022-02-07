@@ -359,6 +359,10 @@ _DEFAULT_CELERY_BEAT_SCHEDULE = {
     "remove-inactive-users" : {
         "task": "mygpo.users.tasks.remove_inactive_users",
         "schedule": timedelta(hours=24), # 24 hours
+    },
+    "schedule-podcast-updates" : {
+        "task": "mygpo.data.tasks.schedule_updates",
+        "schedule": timedelta(hours=1), # 1 hour
     }
 }
 
