@@ -129,7 +129,6 @@ class PodcastAdmin(admin.ModelAdmin):
                     "new_location",
                     "last_update",
                     "update_interval_factor",
-                    "next_podcast_update",
                     "search_index_uptodate",
                     "search_vector",
                 )
@@ -147,7 +146,6 @@ class PodcastAdmin(admin.ModelAdmin):
         "created",
         "last_update",
         "update_interval_factor",
-        "next_podcast_update",
         "search_index_uptodate",
         "search_vector",
     )
