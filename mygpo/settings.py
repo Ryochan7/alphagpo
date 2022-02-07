@@ -2,6 +2,7 @@ import re
 import sys
 import os.path
 import dj_database_url
+import ast
 
 
 try:
@@ -349,6 +350,17 @@ CELERY_RESULT_BACKEND = "django-db"
 CELERY_RESULT_EXPIRES = 60 * 60  # 1h expiry time in seconds
 
 CELERY_ACCEPT_CONTENT = ["json"]
+
+_DEFAULT_CELERY_BEAT_SCHEDULE = {
+    "update-search-indexes": {
+        "task": "mygpo.search.tasks.update_search_index",
+        "schedule": 3600, # 1 hour
+    }
+}
+
+CELERY_BEAT_SCHEDULE = (ast.literal_eval(os.getenv("CELERY_BEAT_SCHEDULE"))
+if "CELERY_BEAT_SCHEDULE" in os.environ
+else (DEFAULT_CELERY_BEAT_SCHEDULE if not DEBUG else {}))
 
 
 ### Google API
