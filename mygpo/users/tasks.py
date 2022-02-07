@@ -60,7 +60,7 @@ def remove_inactive_users():
         user.delete()
 
 
-@shared_task(run_every=timedelta(hours=1))
+@shared_task
 @close_connection
 def clearsessions():
     """Clear expired sessions
