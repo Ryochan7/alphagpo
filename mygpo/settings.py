@@ -360,7 +360,7 @@ _DEFAULT_CELERY_BEAT_SCHEDULE = {
 
 CELERY_BEAT_SCHEDULE = (ast.literal_eval(os.getenv("CELERY_BEAT_SCHEDULE"))
 if "CELERY_BEAT_SCHEDULE" in os.environ
-else (DEFAULT_CELERY_BEAT_SCHEDULE if not DEBUG else {}))
+else (_DEFAULT_CELERY_BEAT_SCHEDULE if not DEBUG else {}))
 
 
 ### Google API
