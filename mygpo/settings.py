@@ -355,6 +355,10 @@ _DEFAULT_CELERY_BEAT_SCHEDULE = {
     "update-search-indexes": {
         "task": "mygpo.search.tasks.update_search_index",
         "schedule": 3600, # 1 hour
+    },
+    "remove-inactive-users" : {
+        "task": "mygpo.users.tasks.remove_inactive_users",
+        "schedule": 86400, # 24 hours
     }
 }
 

@@ -39,7 +39,7 @@ def sync_user(user_pk):
             raise sync_user.retry()
 
 
-@shared_task(run_every=timedelta(hours=1))
+@shared_task
 @close_connection
 def remove_inactive_users():
     """Remove users that have not been activated"""
