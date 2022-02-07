@@ -1,6 +1,5 @@
 import functools
 import operator
-from datetime import timedelta
 
 from celery import shared_task
 from django_db_geventpool.utils import close_connection
@@ -17,16 +16,13 @@ from celery.utils.log import get_task_logger
 logger = get_task_logger(__name__)
 
 
-# interval in which podcast updates are scheduled
-UPDATE_INTERVAL = timedelta(hours=1)
-
 # Maximum number of podcasts to update in one job run
 MAX_INDEX = 1000
 
 
-@shared_task(run_every=UPDATE_INTERVAL)
+@shared_task
 @close_connection
-def update_search_index(run_every=UPDATE_INTERVAL):
+def update_search_index():
     """Schedules podcast updates that are due within ``interval``"""
 
     logger.info("Updating search index")
