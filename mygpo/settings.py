@@ -363,6 +363,10 @@ _DEFAULT_CELERY_BEAT_SCHEDULE = {
     "schedule-podcast-updates" : {
         "task": "mygpo.data.tasks.schedule_updates",
         "schedule": timedelta(hours=1), # 1 hour
+    },
+    "schedule-podcast-longest-no-update": {
+        "task": "mygpo.data.tasks.schedule_updates_longest_no_update",
+        "schedule": timedelta(hours=24), # 24 hours
     }
 }
 
