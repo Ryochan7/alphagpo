@@ -3,6 +3,7 @@ import sys
 import os.path
 import dj_database_url
 import ast
+from datetime import timedelta
 
 
 try:
@@ -358,7 +359,7 @@ _DEFAULT_CELERY_BEAT_SCHEDULE = {
     },
     "remove-inactive-users" : {
         "task": "mygpo.users.tasks.remove_inactive_users",
-        "schedule": 86400, # 24 hours
+        "schedule": timedelta(hours=24), # 24 hours
     }
 }
 
