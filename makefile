@@ -58,7 +58,7 @@ check-code-format:
 
 start-project:
 	# Start new screen session for mygpo project
-	screen -dmS mygpo ./startapp_mygpo.sh
+	screen -dmS mygpo ./startmygpo_app.sh
 
 stop-project:
 	# Add ^C to session console. Causes shell script to kill subprocesses
