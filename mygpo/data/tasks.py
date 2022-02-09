@@ -8,7 +8,7 @@ from django_db_geventpool.utils import close_connection
 
 from mygpo.data.podcast import calc_similar_podcasts
 from mygpo.celery import celery
-from mygpo.podcasts.models import Podcast
+from mygpo.podcasts.models import Podcast, MAX_UPDATE_INTERVAL
 
 from celery.utils.log import get_task_logger
 
@@ -73,10 +73,17 @@ def schedule_updates(interval=UPDATE_INTERVAL):
 @close_connection
 def schedule_updates_longest_no_update():
     """Schedule podcasts for update that have not been updated for longest"""
-    # max number of updates to schedule (one every 10s)
-    max_updates = UPDATE_INTERVAL.total_seconds() / 10
+    now = datetime.utcnow()
 
-    podcasts = Podcast.objects.order_by("last_update")[:max_updates]
+    # Get date 30 days in the past
+    past_time = now - timedelta(hours=MAX_UPDATE_INTERVAL)
+
+    # Grab a possible slice of outdated podcasts. Should be more than enough
+    # if any exists
+    max_updates = 360 #UPDATE_INTERVAL.total_seconds() / 10
+
+    # Find possible skipped podcasts not updated in the past 30 days
+    podcasts = Podcast.objects.filter(last_update__lte=past_time).order_by("last_update")[:max_updates]
     _schedule_updates(podcasts)
 
 
