@@ -56,6 +56,12 @@ format-code:
 check-code-format:
 	black --check --target-version py38 --skip-string-normalization mygpo/
 
+start-project:
+	# Start new screen session for mygpo project
+	screen -dmS mygpo ./startapp_mygpo.sh
 
-.PHONY: all help test clean unittest coverage install-deps format-code
+stop-project:
+	# Add ^C to session console. Causes shell script to kill subprocesses
+	screen -X -S mygpo stuff "^C"
 
+.PHONY: all help test clean unittest coverage install-deps format-code start-project stop-project
