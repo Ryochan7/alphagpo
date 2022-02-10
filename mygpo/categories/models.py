@@ -11,6 +11,11 @@ def random_string_generator(size=10, chars=string.ascii_lowercase + string.digit
     return ''.join(random.choice(chars) for _ in range(size))
 
 
+class CategoryManager(models.Manager):
+    def get_by_natural_key(self, title_slug):
+        return self.get(title_slug=title_slug)
+
+
 class Category(UpdateInfoModel):
     """A category of podcasts"""
 
@@ -20,11 +25,18 @@ class Category(UpdateInfoModel):
 
     num_entries = models.IntegerField()
 
+    # Override default manager
+    objects = CategoryManager()
+
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
         index_together = [("modified", "num_entries")]
+
+    # Use natural key for initial data fixture usage. Don't rely on integer pk
+    def natural_key(self):
+        return (self.title_slug,)
 
     def save(self, *args, **kwargs):
         self.num_entries = self.entries.count()
@@ -81,6 +93,11 @@ class CategoryEntry(UpdateInfoModel):
         index_together = [("category", "modified")]
 
 
+class CategoryTagManager(models.Manager):
+    def get_by_natural_key(self, tag):
+        return self.get(tag=tag)
+
+
 class CategoryTag(models.Model):
 
     tag = models.SlugField(unique=True)
@@ -88,3 +105,10 @@ class CategoryTag(models.Model):
     category = models.ForeignKey(
         Category, related_name="tags", on_delete=models.CASCADE
     )
+
+    # Override default manager
+    objects = CategoryTagManager()
+
+    # Use natural key for initial data fixture usage. Don't rely on integer pk
+    def natural_key(self):
+        return (self.tag,)
