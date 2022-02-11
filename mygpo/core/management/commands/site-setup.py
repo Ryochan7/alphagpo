@@ -209,8 +209,9 @@ the base Django setup commands."""
                 category = Category.objects.create(**cat)
 
             # Check each tag to see if it needs to be created
+            category_tags_list = category.tags.all()
             for tag in entry["tags"]:
-                tag_exists = any(tag == cat_tag.tag for cat_tag in category.tags.all())
+                tag_exists = any(tag == cat_tag.tag for cat_tag in category_tags_list)
                 if not tag_exists:
                     category.tags.create(tag=tag)
 
