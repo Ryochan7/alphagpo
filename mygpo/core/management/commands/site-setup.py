@@ -217,5 +217,8 @@ the base Django setup commands."""
 
 
     def handle(self, *args, **options):
+        # Create admin user for site
+        call_command("createsuperuser")
+
         with transaction.atomic():
             self._setup_default_categories()
