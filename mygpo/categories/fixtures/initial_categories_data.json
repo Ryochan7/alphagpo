@@ -1,0 +1,1135 @@
+[
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Comedy",
+    "title_slug": "comedy",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "News",
+    "title_slug": "news",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Religion & Spirituality",
+    "title_slug": "religion-spirituality",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Science",
+    "title_slug": "science",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Leisure",
+    "title_slug": "leisure",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Arts",
+    "title_slug": "arts",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Business",
+    "title_slug": "business",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Education",
+    "title_slug": "education",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Fiction",
+    "title_slug": "fiction",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Government",
+    "title_slug": "government",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "History",
+    "title_slug": "history",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Health & Fitness",
+    "title_slug": "health-and-fitness",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Kids & Family",
+    "title_slug": "kids-family",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Music",
+    "title_slug": "music",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Society & Culture",
+    "title_slug": "society-culture",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Sports",
+    "title_slug": "sports",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "Technology",
+    "title_slug": "technology",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "True Crime",
+    "title_slug": "true-crime",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.category",
+  "fields": {
+    "title": "TV & Film",
+    "title_slug": "tv-film",
+    "num_entries": 0
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "comedy",
+    "category": [
+      "comedy"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "religion-spirituality",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "science",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "leisure",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "animation-manga",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "christianity",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "arts",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "business",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "education",
+    "category": [
+      "education"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "fiction",
+    "category": [
+      "fiction"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "government",
+    "category": [
+      "government"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "history",
+    "category": [
+      "history"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "health-fitness",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "kids-family",
+    "category": [
+      "kids-family"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "music",
+    "category": [
+      "music"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "society-culture",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "sports",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "technology",
+    "category": [
+      "technology"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "true-crime",
+    "category": [
+      "true-crime"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "tv-film",
+    "category": [
+      "tv-film"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "books",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "design",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "fashion-beauty",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "food",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "performing-arts",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "visual-arts",
+    "category": [
+      "arts"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "careers",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "entrepreneurship",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "investing",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "management",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "marketing",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "non-profit",
+    "category": [
+      "business"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "comedy-interviews",
+    "category": [
+      "comedy"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "improv",
+    "category": [
+      "comedy"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "stand-up",
+    "category": [
+      "comedy"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "courses",
+    "category": [
+      "education"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "how-to",
+    "category": [
+      "education"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "language-learning",
+    "category": [
+      "education"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "self-improvement",
+    "category": [
+      "education"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "comedy-fiction",
+    "category": [
+      "fiction"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "drama",
+    "category": [
+      "fiction"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "science-fiction",
+    "category": [
+      "fiction"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "alternative-health",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "fitness",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "medicine",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "mental-health",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "nutrition",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "sexuality",
+    "category": [
+      "health-and-fitness"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "education-for-kids",
+    "category": [
+      "kids-family"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "parenting",
+    "category": [
+      "kids-family"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "pets-animals",
+    "category": [
+      "kids-family"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "stories-for-kids",
+    "category": [
+      "kids-family"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "automotive",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "aviation",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "crafts",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "games",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "hobbies",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "home-garden",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "video-games",
+    "category": [
+      "leisure"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "music-commentary",
+    "category": [
+      "music"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "music-history",
+    "category": [
+      "music"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "music-interviews",
+    "category": [
+      "music"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "business-news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "daily-news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "entertainment-news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "news-commentary",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "politics",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "sports-news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "tech-news",
+    "category": [
+      "news"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "buddhism",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "hinduism",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "islam",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "judiasm",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "religion",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "spirituality",
+    "category": [
+      "religion-spirituality"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "astronomy",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "chemistry",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "earth-sciences",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "life-sciences",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "mathematics",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "natural-sciences",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "nature",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "physics",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "social-sciences",
+    "category": [
+      "science"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "documentary",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "personal-journals",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "philosophy",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "places-travel",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "relationships",
+    "category": [
+      "society-culture"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "baseball",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "basketball",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "cricket",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "fantasy-sports",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "football",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "golf",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "hockey",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "rugby",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "soccer",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "swimming",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "tennis",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "volleyball",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "wilderness",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "wrestling",
+    "category": [
+      "sports"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "after-shows",
+    "category": [
+      "tv-film"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "film-history",
+    "category": [
+      "tv-film"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "film-interviews",
+    "category": [
+      "tv-film"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "film-reviews",
+    "category": [
+      "tv-film"
+    ]
+  }
+},
+{
+  "model": "categories.categorytag",
+  "fields": {
+    "tag": "tv-reviews",
+    "category": [
+      "tv-film"
+    ]
+  }
+}
+]
