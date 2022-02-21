@@ -12,6 +12,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKey
 from django.contrib.postgres.search import SearchVectorField
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 from mygpo import utils
 from mygpo.core.models import (
@@ -550,6 +551,10 @@ class Podcast(
 ):
     """A Podcast"""
 
+    _RESTRICTIONS_HELP_TEXT = _("""CSV string with known restriction flags. Currently used:<br/>
+    <strong>hide</strong> - Hide podcast object in webapp. Make request return a 404 response<br/>
+    <strong>hide-author</strong> - Temporarily set author reference of Podcast instance to null for the request""")
+
     logo_url = models.URLField(null=True, max_length=1000)
     group = models.ForeignKey(
         PodcastGroup, null=True, blank=True, on_delete=models.PROTECT
@@ -560,7 +565,11 @@ class Podcast(
     related_podcasts = models.ManyToManyField("self", symmetrical=True, blank=True)
 
     subscribers = models.PositiveIntegerField(default=0)
-    restrictions = models.CharField(max_length=20, null=False, blank=True, default="")
+
+    # CSV string with known restriction flags. Currently used:
+    # hide - Hide podcast object in webapp. Make request return a 404 response
+    # hide-author - Temporarily set author reference of Podcast instance to null for the request
+    restrictions = models.CharField(max_length=20, null=False, blank=True, default="", help_text=_RESTRICTIONS_HELP_TEXT)
     common_episode_title = models.CharField(max_length=100, null=False, blank=True)
     new_location = models.URLField(max_length=1000, null=True, blank=True)
     latest_episode_timestamp = models.DateTimeField(null=True, blank=True)
