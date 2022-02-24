@@ -186,6 +186,9 @@ class PodcastUpdater(object):
         # will later be used to see whether the index is outdated
         old_index_fields = get_index_fields(podcast)
 
+        temp_authentication = parsed.get("authentication", None)
+        podcast.uses_auth = podcast.uses_auth if not temp_authentication else True
+
         podcast.title = parsed.get("title") or podcast.title
         podcast.description = parsed.get("description") or podcast.description
         podcast.subtitle = parsed.get("subtitle") or podcast.subtitle
