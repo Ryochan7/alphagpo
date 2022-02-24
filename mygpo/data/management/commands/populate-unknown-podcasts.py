@@ -15,7 +15,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Consider all Podcast objects with no known latest episode timestamp as unknown.
         # Should be faster than checking for empty title. Might add index in future
-        podcast_urls = Podcast.objects.filter(latest_episode_timestamp=None).prefetch_related("urls").values_list("urls__url")
+        podcast_urls = Podcast.objects.filter(latest_episode_timestamp=None, uses_auth=False).prefetch_related("urls").values_list("urls__url")
 
         # Grab first applicable URL for each Podcast
         podcast_url_list = [url_group[0] for url_group in podcast_urls if url_group != None and len(url_group) > 0]

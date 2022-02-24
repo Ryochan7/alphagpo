@@ -597,6 +597,9 @@ class Podcast(
     # Raw languague code with no territory
     base_language = models.CharField(max_length=10, null=True, blank=True, db_index=True)
 
+    # Flag stating whether Podcast requires authentication to access feeds
+    uses_auth = models.BooleanField(default=False)
+
     objects = PodcastManager()
 
     class Meta:
