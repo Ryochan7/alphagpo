@@ -141,6 +141,7 @@ class PodcastUpdater(object):
                 # Check if a feed was fetched. Attempt to check for
                 # HTTP Authentication if info was found
                 if parsed:
+                    podcast = p
                     temp_authentication = parsed.get("authentication", None)
                     podcast.uses_auth = podcast.uses_auth if not temp_authentication else True
 
