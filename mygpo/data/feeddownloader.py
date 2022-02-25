@@ -125,6 +125,8 @@ class PodcastUpdater(object):
         return podcast
 
     def parse_feed(self):
+        parsed = None
+
         try:
             parsed = self._fetch_feed()
             self._validate_parsed(parsed)
@@ -136,6 +138,12 @@ class PodcastUpdater(object):
             # podcast object
             try:
                 p = Podcast.objects.get(urls__url=self.podcast_url)
+                # Check if a feed was fetched. Attempt to check for
+                # HTTP Authentication if info was found
+                if parsed:
+                    temp_authentication = parsed.get("authentication", None)
+                    podcast.uses_auth = podcast.uses_auth if not temp_authentication else True
+
                 return (None, p, False)
 
             except Podcast.DoesNotExist as pdne:
