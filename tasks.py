@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def start_project(ctx):
-    """Start new screen session for mygpo projec"""
+    """Start new screen session for mygpo project"""
     ctx.run("screen -dmS mygpo ./startmygpo_app.sh")
 
 @task
