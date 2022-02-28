@@ -2,6 +2,7 @@ from django.utils.html import format_html
 from django.utils.translation import gettext as _
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
+from django.forms import ModelForm
 from mygpo.podcasts.models import (
     Podcast,
     Episode,
@@ -79,6 +80,20 @@ class PodcastInline(AdminLinkInline):
         return False
 
 
+class PodcastAdminForm(ModelForm):
+    class Meta:
+        model = Podcast
+        # Need blank exclude list or Django will thrown an error
+        # Let ModelAdmin actually state which fields to display
+        exclude = []
+        # Define help text here rather than in Model.
+        # Adding help_text on Model fields causes a migration to be
+        # made
+        help_texts = {
+            "restrictions": Podcast._RESTRICTIONS_HELP_TEXT,
+        }
+
+
 @admin.register(Podcast)
 class PodcastAdmin(admin.ModelAdmin):
     """Admin page for podcasts"""
@@ -153,6 +168,9 @@ class PodcastAdmin(admin.ModelAdmin):
     )
 
     show_full_result_count = False
+
+    # Using custom ModelForm to add extra help_text
+    form = PodcastAdminForm
 
     def main_url(self, podcast):
         url = podcast.urls.first()

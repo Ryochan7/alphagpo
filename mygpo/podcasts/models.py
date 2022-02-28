@@ -569,7 +569,7 @@ class Podcast(
     # CSV string with known restriction flags. Currently used:
     # hide - Hide podcast object in webapp. Make request return a 404 response
     # hide-author - Temporarily set author reference of Podcast instance to null for the request
-    restrictions = models.CharField(max_length=20, null=False, blank=True, default="", help_text=_RESTRICTIONS_HELP_TEXT)
+    restrictions = models.CharField(max_length=20, null=False, blank=True, default="")
     common_episode_title = models.CharField(max_length=100, null=False, blank=True)
     new_location = models.URLField(max_length=1000, null=True, blank=True)
     latest_episode_timestamp = models.DateTimeField(null=True, blank=True)
