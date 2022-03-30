@@ -905,6 +905,9 @@ class Tag(models.Model):
 
     SOURCE_CHOICES = ((FEED, "Feed"), (DELICIOUS, "delicious"), (USER, "User"))
 
+    # Enfored at database level. Might change later
+    MAX_LEN_TAG = 50
+
     tag = models.SlugField()
 
     # indicates where the tag came from

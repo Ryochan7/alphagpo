@@ -224,7 +224,11 @@ class PodcastUpdater(object):
         for tag in feed_tags:
             tag_exists = any(slugify(tag) == pod_tag.tag for pod_tag in podcast_tags_list)
             if not tag_exists:
-                podcast.tags.create(tag=slugify(tag), source=Tag.FEED)
+                slug_tag = slugify(tag)
+                if len(slug_tag) > Tag.MAX_LEN_TAG:
+                    slug_tag = slug_tag[:Tag.MAX_LEN_TAG]
+
+                podcast.tags.create(tag=slug_tag, source=Tag.FEED)
 
         podcast.common_episode_title = to_maxlength(
             Podcast,
